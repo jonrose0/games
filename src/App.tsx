@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import Games from './Games';
 import Detail from './Detail';
-import {
+import styled, {
 	createGlobalStyle,
 	DefaultTheme,
 	ThemeProvider,
@@ -44,6 +44,17 @@ const GlobalStyles = createGlobalStyle`
 	}
 `;
 
+const AttributeStyled = styled.a`
+	position: fixed;
+	bottom: 1rem;
+	left: 0;
+	background: rgb(0 0 0 / 20%);
+	color: #fff;
+	padding: 1rem;
+	padding-left: 2rem;
+	text-decoration: none;
+`;
+
 function App() {
 	return (
 		<div className='App'>
@@ -55,6 +66,9 @@ function App() {
 						<Route path='games/:id' element={<Detail />} />
 					</Routes>
 				</main>
+				<AttributeStyled href='https://rawg.io/' target='_blank'>
+					Data from RAWG
+				</AttributeStyled>
 			</ThemeProvider>
 		</div>
 	);
